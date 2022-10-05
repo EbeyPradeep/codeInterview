@@ -43,15 +43,14 @@ def zig_zag_traverse(m=s4):
                 zzs[i + j + 1].append(m[j][i])
             else:
                 zzs[i + j + 1] = [m[j][i]]
-    print(zzs)
-    sol = []
+    solution = []
     for z in range(1, l + b):
         if z % 2 == 0:
             for i in range(len(zzs[z]) - 1, -1, -1):
-                sol.append(zzs[z][i])
+                solution.append(zzs[z][i])
         else:
-            sol.extend(zzs[z])
-    return sol
+            solution.extend(zzs[z])
+    return solution
 
 
 if __name__ == '__main__':

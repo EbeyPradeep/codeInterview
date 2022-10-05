@@ -34,21 +34,20 @@ s4 = [
 
 
 def zig_zag_traverse(m=s4):
-
     l = len(m[0])
     b = len(m)
     zzs = {}
     for j in range(b):
         for i in range(l):
-            if (i+j+1) in zzs:
-                zzs[i+j+1].append(m[j][i])
+            if (i + j + 1) in zzs:
+                zzs[i + j + 1].append(m[j][i])
             else:
-                zzs[i+j+1] = [m[j][i]]
+                zzs[i + j + 1] = [m[j][i]]
     print(zzs)
     sol = []
-    for z in range(1, l+b):
+    for z in range(1, l + b):
         if z % 2 == 0:
-            for i in range(len(zzs[z])-1, -1, -1):
+            for i in range(len(zzs[z]) - 1, -1, -1):
                 sol.append(zzs[z][i])
         else:
             sol.extend(zzs[z])
@@ -58,3 +57,4 @@ def zig_zag_traverse(m=s4):
 if __name__ == '__main__':
     sol = zig_zag_traverse()
     print(sol)
+    # FIXME need to optimize the code
